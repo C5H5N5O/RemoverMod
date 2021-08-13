@@ -1,0 +1,20 @@
+package get_xyz.main;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+import com.sun.org.slf4j.internal.Logger;
+
+
+public class GetXYZ extends JavaPlugin {
+	Logger log = getLogger();
+	
+	@Override
+	public void onEnable() {
+		log.info("Работает, аче");
+	}
+
+	@Override
+	public void onDisable() {
+		
+	}
+}

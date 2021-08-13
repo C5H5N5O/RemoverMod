@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+D:\_projects\plagins\RemoverMod\PluginTest\.metadata\.plugins\org.eclipse.jdt.core
+1554221152.index
+3460880079.index
+2206907875.index

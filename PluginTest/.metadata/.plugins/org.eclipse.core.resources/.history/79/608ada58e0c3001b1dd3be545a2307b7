@@ -1,0 +1,64 @@
+package get_xyz.main;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import java.util.Formatter;
+
+import org.bukkit.Bukkit;
+
+
+
+
+
+
+public class DataBase {	
+	
+	static Connection conn;
+	static Statement statmt;
+	
+	static Formatter f = new Formatter();
+	
+	// --------œŒƒ Àﬁ◊≈Õ»≈   ¡¿«≈ ƒ¿ÕÕ€’--------
+	public void Connect() throws ClassNotFoundException, SQLException {
+		
+		Class.forName("org.sqlite.JDBC");
+		conn = DriverManager.getConnection("jdbc:sqlite:D:\\_projects\\Remover\\db.db");
+		   
+		statmt = conn.createStatement();
+		   
+		Bukkit.getLogger().info("database connected");
+		   
+	   }
+	
+	
+	
+	// —Œ«ƒ¿®“ “¿¡À»÷” ≈—À» ŒÕ¿ Õ≈ —”Ÿ≈—“¬”≈“
+	public void CreatPlayerTable() throws ClassNotFoundException, SQLException {
+		statmt.execute(
+		"CREATE TABLE if not exists 'players' "
+		+ "("
+			+ "'id' INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ "'name' text, "
+			+ "'X' INT, "
+			+ "'Z' INT"
+		+ ");");
+	}
+	
+	public void WritePlayerLocation(String Player, int X, int Z) throws SQLException {
+		
+
+		
+		statmt.execute("SELECT X FROM 'players' WHERE name = '"+Player+"'");
+		statmt.execute("SELECT Y FROM 'players' WHERE name = '"+Player+"'");
+		
+		
+		statmt.execute(String.valueOf("INSERT INTO 'players' ('name', 'X', 'Z') VALUES ('"
+									    +Player+"', "+String.valueOf(X)+", "+String.valueOf(Z)+"); "));
+		
+		
+	}
+	
+}

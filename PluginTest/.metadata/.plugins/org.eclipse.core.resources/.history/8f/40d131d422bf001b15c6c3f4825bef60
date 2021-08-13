@@ -1,0 +1,15 @@
+package get_xyz.main;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+
+public class GetXYZ extends JavaPlugin{
+	
+	public void onEnable() {
+		getLogger().info("enable");
+	}
+	
+	public void onDisable() {
+		getLogger().info("disaple");
+	}
+}

@@ -1,0 +1,3 @@
+name: GetXYZ
+main: get_xyz.main.GetXYZ
+version: 0.1

@@ -1,0 +1,11 @@
+package get_xyz;
+
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+
+
+public class GetXYZ extends JavaPlugin
+{
+	
+}
